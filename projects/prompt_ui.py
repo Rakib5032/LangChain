@@ -28,16 +28,15 @@ length_input = st.selectbox('Enter Explanation Length', ["Short (1-2 paragraphs)
 
 template = load_prompt('template.json')
 
-prompt = template.format(
-    paper_input=paper_input,
-    style_input=style_input,
-    length_input=length_input
-)
-
 
 if st.button('Click'):
-    respond = model.invoke(prompt)
+    
+    chain  = template | model
+    respond = chain.invoke({
+        'paper_input': paper_input,
+        'style_input': style_input,
+        'length_input': length_input
+    })
     st.write(respond.content)
-    st.write(prompt)
 
 
