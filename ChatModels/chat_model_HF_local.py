@@ -11,4 +11,4 @@ llm = HuggingFacePipeline.from_model_id(
 model = ChatHuggingFace(llm = llm)
 
 response = model.invoke("Create wonderful a html form")
-print(response.content)
+print(response)

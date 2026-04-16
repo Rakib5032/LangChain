@@ -26,7 +26,11 @@ template2 = PromptTemplate(
 
 prompt1 = template1.invoke({'topic': 'black hole'})
 
-result = model.invoke(prompt1)
+result1 = model.invoke(prompt1)
 
 # print(result.content)
 
+prompt2 = template2.invoke({'text': result1.content})
+
+result2 = model.invoke(prompt2)
+print(result2.content)
