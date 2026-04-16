@@ -21,7 +21,7 @@ template1 = PromptTemplate(
 )
 
 template2 = PromptTemplate(
-    template='Write a 5 line summary on the following text {text}',
+    template='Write 5 point summary on the following text {text}',
     input_variables=['text']
 )
 
