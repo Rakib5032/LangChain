@@ -8,5 +8,5 @@ model = ChatOpenAI(
     base_url="https://openrouter.ai/api/v1"
 )
 
-response = model.invoke('tell about tcl global')
+response = model.invoke('create a html page about yoga couching')
 print(response.content)
